@@ -27,8 +27,8 @@ font-size: 0.9em; color: #555; margin-top: 20px; padding: 10px; border-left:
        .map-description { font-size: 0.9em; color: #666; margin-top: 5px;
 margin-bottom: 15px; display: block; }
        .repository-link { text-align: center; margin-top: 30px; }
-       .attribution { text-align: center; margin-top: 40px; font-size: 0.85em; color: #777; border-top: 1px solid #eee; padding-top: 15px; } /* Re-added for styling attribution */
-       .disclaimer { font-size: 0.85em; color: #777; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; text-align: center; } /* New style for disclaimer */
+       .attribution { text-align: center; margin-top: 40px; font-size: 0.85em; color: #777; border-top: 1px solid #eee; padding-top: 15px; }
+       .disclaimer { font-size: 0.85em; color: #777; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; text-align: center; }
     </style>
 </head>
 <body>
@@ -48,7 +48,7 @@ href="./maps/sludge_hub_map_property_center.html">Property Center
 Map</a><br>
             <span
 class="map-description">This map displays observations relative to
-the primary Sludge Hub property, highlighting observations within the property
+the primary Sludge Hub collaborator property site, highlighting observations within and around the project site,
 and concentric buffer zones.</span></li>
            <li><a
 href="./maps/sludge_hub_map_apiary_center.html">Apiary Center
@@ -65,7 +65,7 @@ class="note">
 <span
 id="last-data-pull-date">LAST_UPDATE_DATE_PLACEHOLDER</span></p>
            <p><em>(This date reflects the last time the core
-iNaturalist data file was updated in the repository.)</em></p>
+iNaturalist data file was updated in the repository. Stay tuned for more updates and new features)</em></p>
         </div>
 
        <h2>Background</h2>
@@ -73,7 +73,7 @@ iNaturalist data file was updated in the repository.)</em></p>
         
         <p>These maps help us visualize several key aspects:</p>
         <ul>
-           <li><b>Property Boundaries:</b> Observations directly within our
+           <li><b>Property Boundaries:</b> Observations directly within and around our
 defined research property.</li>
            <li><b>Buffer Zones:</b> Observations within specified distances (1,
 2, 3, 4, and 5 miles) from our primary research center and a key apiary
@@ -86,7 +86,7 @@ observed, providing insights into their spatial patterns.</li>
 
         <p>This project and its data collection processes are supported by The Sludge Hub & Company (<a href="https://www.sludgehub.org/" target="_blank">www.sludgehub.org</a>), the West Virginia Beekeeping Association (<a href="https://www.wvbeekeepers.org/" target="_blank">www.wvbeekeepers.org</a>), and GROW Externships (<a href="https://www.growexternships.org/" target="_blank">www.growexternships.org</a>).</p>
 
-       <h2>Methodology and Judgment Calls</h2>
+       <h2>Methodology</h2>
         <p>To
 ensure transparency in our data processing and map generation, we want to
 clarify some of the key decisions and steps taken:</p>
@@ -110,7 +110,7 @@ markers may reveal more details, depending on the data available from
 iNaturalist.</li>
            <li><b>Projection:</b> The maps generally use the Web Mercator projection (EPSG:3857), which is standard for web mapping, to display geographical data.</li>
            <li><b>Data Source:</b> All observation data is sourced directly from
-the iNaturalist API.</li>
+the iNaturalist API (<a href="https://api.inaturalist.org/v1/docs/" target="_blank">https://api.inaturalist.org/v1/docs/</a>).</li>
         </ul>
         <p>For
 more detailed information on the scripts and data processing, please refer to
