@@ -1,0 +1,31 @@
+# Virtual Environment
+.venv/
+
+# Data files (raw and cleaned CSVs)
+data/
+
+# Backup files/folders
+backup/
+
+# Sensitive configuration files
+src/config.py
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*~
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+.localized
+.metadata_never_index
+
+# Logs
+*.log
+log/
+logs/
+
+# Specific to VS Code (optional, but common)
+.vscode/
