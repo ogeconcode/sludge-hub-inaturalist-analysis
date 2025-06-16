@@ -31,13 +31,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # --- NEW STEPS FOR AUTOMATIC DATE ---
+      - name: Get Last Data Pull Date
+        id: get_date
+        run: |
+          # Get the last commit date of the analyzed data file
+          LAST_DATA_DATE=$(git log -1 --format="%ad" --date=format:"%B %d, %Y" data/sludge_hub_analyzed_data_with_buffers.csv)
+          echo "Found last data date: $LAST_DATA_DATE"
+          # Set an environment variable so the next step can use it
+          echo "LAST_DATA_DATE=$LAST_DATA_DATE" >> $GITHUB_ENV
+
+      - name: Inject Date into index.html
+        run: |
+          # Replace the placeholder in index.html with the dynamically obtained date
+          # We use '|' as a delimiter in sed because the date string might contain '/'
+          sed -i "s|LAST_UPDATE_DATE_PLACEHOLDER|${{ env.LAST_DATA_DATE }}|" docs/index.html
+          echo "Date injected into index.html"
+      # --- END NEW STEPS ---
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload the content of the 'docs' directory
-          path: './docs' # <--- This line is the key change!
+          path: './docs'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
