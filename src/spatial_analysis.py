@@ -288,8 +288,13 @@ for idx, row in gdf_observations_for_map.iterrows():
 # Add Layer Control to allow users to toggle layers on/off.
 folium.LayerControl().add_to(m_property_center)
 
-# Save Map 1 to an HTML file in the 'data' directory.
-map1_file_path: str = os.path.join('data', 'sludge_hub_map_property_center.html')
+# --- Map Output Paths ---
+# Ensure the docs/maps directory exists
+output_map_dir: str = os.path.join('docs', 'maps')
+os.makedirs(output_map_dir, exist_ok=True) # Create the directory if it doesn't exist
+
+# Save Map 1 to an HTML file in the 'docs/maps' directory.
+map1_file_path: str = os.path.join(output_map_dir, 'sludge_hub_map_property_center.html')
 m_property_center.save(map1_file_path)
 print(f"Interactive Map 1 (Property Center Buffers) saved to {map1_file_path}")
 
@@ -351,7 +356,7 @@ for idx, row in gdf_observations_for_map.iterrows():
 # Add Layer Control to allow users to toggle layers on/off.
 folium.LayerControl().add_to(m_apiary_center)
 
-# Save Map 2 to an HTML file in the 'data' directory.
-map2_file_path: str = os.path.join('data', 'sludge_hub_map_apiary_center.html')
+# Save Map 2 to an HTML file in the 'docs/maps' directory.
+map2_file_path: str = os.path.join(output_map_dir, 'sludge_hub_map_apiary_center.html')
 m_apiary_center.save(map2_file_path)
 print(f"Interactive Map 2 (Apiary Center Buffers) saved to {map2_file_path}")
