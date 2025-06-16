@@ -1,9 +1,6 @@
 # Virtual Environment
 .venv/
 
-# Data files (raw and cleaned CSVs)
-data/
-
 # Backup files/folders
 backup/
 
@@ -29,3 +26,15 @@ logs/
 
 # Specific to VS Code (optional, but common)
 .vscode/
+
+# --- Data Folder Management ---
+# Start by ignoring ALL files within the 'data/' directory.
+# This is a robust way to ensure only specific files are tracked.
+data/*
+
+# EXCEPTION: Explicitly un-ignore (include) these primary data outputs.
+# These are the files that should be tracked in your Git repository.
+!data/sludge_hub_analyzed_data_with_buffers.csv
+!data/sludge_hub_observations.db
+!data/sludge_hub_cleaned_data.csv
+!data/sludge_hub_analyzed_data.csv # Assuming this is also a CSV you want to track
