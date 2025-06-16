@@ -9,7 +9,7 @@ This repository hosts the code and generated maps for spatial analysis of iNatur
 * **Detailed Spatial Analysis:** Provides insights into species distribution and ecological context within and around the project areas in Mineral County, WV.
 
 ## Explore the Maps
-* [View the Live iNaturalist Maps](https://ogeconcode.github.io/sludge-hub-inaturalist-analysis/docs/)
+* [View the Live iNaturalist Maps](https://ogeconcode.github.io/sludge-hub-inaturalist-analysis/)
 * [Sludge Hub Official iNaturalist Project Page](https://www.inaturalist.org/projects/the-sludge-hub)
 
 ## Support & Collaboration
