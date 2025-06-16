@@ -2,13 +2,75 @@
 <html>
 <head>
     <title>SludgeHub iNaturalist Maps</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
+        .container { max-width: 850px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 25px; }
+        h1 { text-align: center; color: #1e3a5f; }
+        ul { list-style-type: disc; margin-left: 20px; padding: 0; }
+        li { margin-bottom: 8px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .note { font-size: 0.9em; color: #555; margin-top: 20px; padding: 10px; border-left: 4px solid #f0ad4e; background-color: #fffde7; }
+        .map-description { font-size: 0.9em; color: #666; margin-top: 5px; margin-bottom: 15px; display: block; }
+        .repository-link { text-align: center; margin-top: 30px; }
+        .attribution { text-align: center; margin-top: 40px; font-size: 0.85em; color: #777; border-top: 1px solid #eee; padding-top: 15px; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to The SludgeHub iNaturalist Maps!</h1>
-    <p>Please use the links below to explore the interactive maps:</p>
-    <ul>
-        <li><a href="./maps/sludge_hub_map_property_center.html">Property Center Map</a></li>
-        <li><a href="./maps/sludge_hub_map_apiary_center.html">Apiary Center Map</a></li>
-    </ul>
+    <div class="container">
+        <h1>Welcome to The SludgeHub iNaturalist Maps!</h1>
+
+        <p>This page provides interactive visualizations of iNaturalist observations in and around the SludgeHub research area. These maps are designed to support our ecological monitoring and research efforts, offering a clearer spatial understanding of biodiversity in relation to our project sites.</p>
+
+        <div class="note">
+            <p><strong>Last iNaturalist Data Pull:</strong> <span id="last-data-pull-date">LAST_UPDATE_DATE_PLACEHOLDER</span></p>
+            <p><em>(This date reflects the last time the core iNaturalist data file was updated in the repository.)</em></p>
+        </div>
+
+        <h2>Overview and Context</h2>
+        <p>This work is supported by the **The Sludge Hub & Company**. As described on their website, "The Sludge Hub & Company is a network of Abandoned Mine Lands (AML) that hosts ecological restoration and waste reutilization projects. It provides access, support services, and community to a wide range of eco-concerned organizations and individuals operating in post-coal spaces." You can learn more at their official website: <a href="https://www.sludgehub.org/" target="_blank">www.sludgehub.org</a>.</p>
+        
+        <p>This webpage was created specifically to monitor environmental changes within the Mineral County, WV region. A key component of these ecological monitoring efforts involves documenting the flora and fauna present, with a particular focus on **pollinator conservation**. iNaturalist serves as an invaluable tool for citizen science data collection, helping us understand the distribution and diversity of species crucial for healthy ecosystems in post-coal landscapes.</p>
+        
+        <p>These maps help us visualize several key aspects:</p>
+        <ul>
+            <li>**Property Boundaries:** Observations directly within our defined research property.</li>
+            <li>**Buffer Zones:** Observations within specified distances (1, 2, 3, 4, and 5 miles) from our primary research center and a key apiary location. These buffers help us understand the broader ecological context and potential influences beyond our immediate boundaries.</li>
+            <li>**Species Distribution:** Where various species have been observed, providing insights into their spatial patterns.</li>
+        </ul>
+        <p>This data is regularly updated to reflect the latest iNaturalist submissions within our region of interest. [**Optional: Add a sentence about who this data is for, e.g., "This resource is primarily for project coordinators and researchers to aid in planning and analysis."**]</p>
+
+        <h2>Methodology and Judgment Calls</h2>
+        <p>To ensure transparency in our data processing and map generation, we want to clarify some of the key decisions and steps taken:</p>
+        <ul>
+            <li>**Data Filtering:** iNaturalist observations were filtered to include only "Research Grade" observations to ensure higher data quality. Observations lacking precise coordinates or identified to a very broad taxonomic level may have been excluded.</li>
+            <li>**Coordinate Precision:** While iNaturalist provides coordinates, slight inaccuracies or intentional blurring (e.g., for sensitive species) can occur. Our analysis relies on the provided coordinates, and these maps represent the reported locations.</li>
+            <li>**Buffer Zone Calculation:** Buffer zones were calculated using standard geospatial libraries (e.g., Shapely, GeoPandas) around the precise coordinates of the SludgeHub Property Center and the Apiary Center. These are approximations and reflect straight-line distances.</li>
+            <li>**Map Interactivity:** Maps are generated using Folium, providing interactive zooming and panning. Clicking on individual observation markers may reveal more details, depending on the data available from iNaturalist.</li>
+            <li>**Projection:** [**Optional: Mention any specific map projection or coordinate system used if it's relevant to your methodology.**]</li>
+            <li>**Data Source:** All observation data is sourced directly from the iNaturalist API.</li>
+        </ul>
+        <p>For more detailed information on the scripts and data processing, please refer to the project's GitHub repository.</p>
+
+        <h2>Explore the Interactive Maps:</h2>
+        <ul>
+            <li><a href="./maps/sludge_hub_map_property_center.html">Property Center Map</a><br>
+            <span class="map-description">This map displays observations relative to the primary SludgeHub property, highlighting observations within the property and concentric buffer zones.</span></li>
+            <li><a href="./maps/sludge_hub_map_apiary_center.html">Apiary Center Map</a><br>
+            <span class="map-description">This map focuses on observations around the apiary, showing buffer zones specifically around this key area, which is vital for understanding pollinator habitats.</span></li>
+        </ul>
+
+        <div class="repository-link">
+            <p>View the full project code and data on GitHub:</p>
+            <p><a href="https://github.com/ogeconcode/sludge-hub-inaturalist-analysis" target="_blank">SludgeHub iNaturalist Analysis GitHub Repository</a></p>
+        </div>
+
+        <p>If you have any questions about the data or the maps, please contact [**Your Name/Contact Email/Team Name**].</p>
+
+        <div class="attribution">
+            <p>Maps and webpage created by Olivia Gonzalez.</p>
+        </div>
+    </div>
 </body>
 </html>
