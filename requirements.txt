@@ -1,0 +1,14 @@
+branca
+certifi
+charset-normalizer
+folium
+geopandas
+idna
+Jinja2
+MarkupSafe
+numpy
+packaging
+pandas
+pyproj
+requests
+shapely
